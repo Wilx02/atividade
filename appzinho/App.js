@@ -4,20 +4,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { View, Text, StyleSheet } from 'react-native';
 import HomeTabs from './homeTabs';
 
-// Tipagem do Stack Navigator
-export type RootStackParamList = {
-  Home: undefined;
-  Detalhes: { id: string } | undefined;
-};
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-// Tela de Detalhes
-type DetailsScreenProps = {
-  route: { params?: { id: string } };
-};
 
-function DetailsScreen({ route }: detailsScreenProps) {
+function DetailsScreen({ route }) {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Detalhes do item {route.params?.id}</Text>
